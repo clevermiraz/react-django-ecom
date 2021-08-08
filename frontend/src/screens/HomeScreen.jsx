@@ -4,6 +4,10 @@ import Product from '../components/Product';
 import products from '../products';
 
 function HomeScreen() {
+    /* here "products" is json type data in our local repository
+       we map then pass product to Product Component as a props
+    */
+
     return (
         <div>
             <h1>Latest Products</h1>

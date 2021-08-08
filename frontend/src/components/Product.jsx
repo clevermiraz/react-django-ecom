@@ -4,6 +4,10 @@ import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
 function Product({ product }) {
+    /* Here we make smiple card that shows img,name,rating & price
+       For rating handle We pass some info as a props in Rating component
+    */
+
     return (
         <Card className="my-3 p-3 rounded">
             <Link to={`/product/${product.id}`}>
@@ -16,6 +20,7 @@ function Product({ product }) {
                         <strong>{product.name}</strong>
                     </Card.Title>
                 </Link>
+
                 <Card.Text as="div">
                     <div className="my-3">
                         <Rating

@@ -6,6 +6,10 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScreen from './screens/ProductScreen';
 
 function App() {
+    /*  Wrap with <Router> cause we want to implement Client side routing
+        use exact path on '/' cause allWhere has '/'
+    */
+
     return (
         <Router>
             <Header />

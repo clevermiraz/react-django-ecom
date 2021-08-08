@@ -5,6 +5,8 @@ import Rating from '../components/Rating';
 import products from '../products';
 
 function ProductScreen({ match }) {
+    // Here match.params.id is come from react-router.
+    // if confused then see at console
     const product = products.find((p) => p.id === match.params.id);
 
     return (

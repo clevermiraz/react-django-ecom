@@ -1,6 +1,10 @@
 import React from 'react';
 
 function Rating({ value, text, color }) {
+    /* here we write Rating logic but redanded may be future 
+       we refactor this component
+    */
+
     return (
         <div className="rating">
             <span>
