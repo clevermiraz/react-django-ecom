@@ -11,4 +11,12 @@ Step3: then go there where package.json live
 Step4: yarn or yarn install or npm install
 
 that's it 🙂🤞
+
+
+## Run React Frontend
+
+cmd: yarn start or npm start
+
+
+Recomend using Yarn🤞
        
