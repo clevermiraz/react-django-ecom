@@ -15,7 +15,7 @@ Step4: the run this cmd:
   yarn
 ```
 Or
-
+### Recommend
 ```bash
   yarn install
 ```
@@ -29,7 +29,7 @@ that's it 🙂🤞
 
 
 ## Run React Frontend
-
+### Recommend
 ```bash
   yarn start
 ```
@@ -41,5 +41,5 @@ Or
 ```
 
 
-Recomend using Yarn🤞
+Recommend using Yarn🤞
        
