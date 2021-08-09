@@ -4,7 +4,7 @@ import { Col, Row } from 'react-bootstrap';
 import Product from '../components/Product';
 
 function HomeScreen() {
-    /* here "products" is json type data in our local repository
+    /* here "products" is json type data in our Database come from django backend fetch with axios
        we map then pass product to Product Component as a props
     */
     const [products, setProducts] = useState([]);
