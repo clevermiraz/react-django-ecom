@@ -5,7 +5,7 @@ Step 1: Clone the Repository
 
 Step2: Go to Part 1 with command:
 ```bash
-  git checkout part1
+  git checkout 1.Starting-Frontend
 ```
 
 Step3: then go there where package.json live
