@@ -27,3 +27,4 @@ yarn-error.log*
 
 .vscode
 .eslintrc
+../backend/static/
