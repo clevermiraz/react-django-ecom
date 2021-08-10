@@ -1,34 +1,47 @@
 
 ## Installation
 
-Step 1: Clone the Repository
+## Backend setup
 
-Step2: Go to Part 1 with command:
+Step 1: Clone the Repository 
+
+Step2: Go to 3.state-Manage with command:
 ```bash
-  git checkout part1
+  git checkout 3.state-Manage
 ```
 
-Step3: then go there where package.json live
+Step3: then go there where backend
 
 Step4: the run this cmd:
 ```bash
-  yarn
+  python -m venv myenv
 ```
-Or
-### Recommend
+### then activate python environment
 ```bash
-  yarn install
+  pip install -r requirements.txt
 ```
-Or
+step5: run these cmd
 
 ```bash
-  npm install
+  python manage.py makemigrations api
+```
+
+```bash
+  python manage.py migrate api
+```
+
+```bash
+  python manage.py createsuperuser
+```
+```bash
+  python manage.py runserver
 ```
 
 that's it 🙂🤞
 
 
-## Run React Frontend
+## FrontEnd Setup
+
 ### Recommend
 ```bash
   yarn start
