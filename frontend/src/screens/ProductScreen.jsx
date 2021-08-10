@@ -10,8 +10,10 @@ import Rating from '../components/Rating';
 
 function ProductScreen({ match }) {
     const dispatch = useDispatch();
+
     const productDetails = useSelector((state) => state.productDetails);
-    const { loading, error, product } = productDetails;
+
+    const { product, loading, error } = productDetails;
 
     useEffect(() => {
         dispatch(listProductDetails(match.params.id));
