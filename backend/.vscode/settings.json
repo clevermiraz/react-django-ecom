@@ -1,5 +1,7 @@
 {
-    "editor.fontFamily": "Victor Mono,monospace",
-    "editor.fontLigatures": true,
-    "editor.cursorBlinking": "expand"
+  "editor.fontFamily": "Victor Mono,monospace",
+  "editor.fontLigatures": true,
+  "editor.cursorBlinking": "expand",
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true
 }

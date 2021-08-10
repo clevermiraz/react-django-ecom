@@ -5,3 +5,5 @@ db.sqlite3
 
 api/__pycache__/
 backend/__pycache__/
+api/migrations/
+static/
