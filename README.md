@@ -42,6 +42,12 @@ that's it 🙂🤞
 
 ## FrontEnd Setup
 
+#Step1: go where package.json located
+
+```bash
+  yarn install
+ ```
+
 ### Recommend
 ```bash
   yarn start
