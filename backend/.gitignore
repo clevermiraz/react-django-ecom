@@ -4,6 +4,8 @@
 db.sqlite3
 
 api/__pycache__/
+api/urls/__pycache__/
+api/views/__pycache__/
 backend/__pycache__/
 api/migrations/
 static/
