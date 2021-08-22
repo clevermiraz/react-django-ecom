@@ -56,6 +56,8 @@ function ProfileScreen({ history }) {
         }
 
         setMesssage('');
+        setPassword('');
+        setConfirmPassword('');
     };
 
     return (
