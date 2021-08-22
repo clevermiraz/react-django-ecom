@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Col, Form, Row } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserDetails } from '../actions/userActions';
+import { getUserDetails, updateUserProfile } from '../actions/userActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
 
 function ProfileScreen({ history }) {
     const [name, setName] = useState('');
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -21,16 +21,23 @@ function ProfileScreen({ history }) {
     const userLogin = useSelector((state) => state.userLogin);
     const { userInfo } = userLogin;
 
+    const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+    const { success } = userUpdateProfile;
+
     useEffect(() => {
         if (!userInfo) {
             history.push('/login');
-        } else if (!user || !user.name) {
+        } else if (!user || !user.name || success) {
+            dispatch({
+                type: USER_UPDATE_PROFILE_RESET
+            });
+
             dispatch(getUserDetails('profile'));
         } else {
             setName(user.name);
             setEmail(user.email);
         }
-    }, [dispatch, history, user, userInfo]);
+    }, [dispatch, history, success, user, userInfo]);
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -38,8 +45,17 @@ function ProfileScreen({ history }) {
         if (password !== confirmPassword) {
             setMesssage('Passwords do not match');
         } else {
-            console.log('updating..........');
+            dispatch(
+                updateUserProfile({
+                    id: user.id,
+                    name,
+                    email,
+                    password
+                })
+            );
         }
+
+        setMesssage('');
     };
 
     return (
@@ -50,7 +66,9 @@ function ProfileScreen({ history }) {
                 {message && <Message variant="danger">{message}</Message>}
 
                 {error && <Message variant="danger">{error}</Message>}
+
                 {loading && <Loader />}
+
                 <Form onSubmit={submitHandler}>
                     <Form.Group controlId="name">
                         <Form.Label>Name</Form.Label>
