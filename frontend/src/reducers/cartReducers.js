@@ -1,9 +1,13 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-case-declarations */
 /* eslint-disable import/prefer-default-export */
-import { CART_ADD_ITEM, CART_REMOVE_ITEM } from '../constants/cartConstants';
+import {
+    CART_ADD_ITEM,
+    CART_REMOVE_ITEM,
+    CART_SAVE_SHIPPING_ADDRESS
+} from '../constants/cartConstants';
 
-export const cartReducer = (state = { cartItems: [] }, action) => {
+export const cartReducer = (state = { cartItems: [], shippingAddress: {} }, action) => {
     switch (action.type) {
         case CART_ADD_ITEM:
             const item = action.payload;
@@ -27,6 +31,12 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
             return {
                 ...state,
                 cartItems: state.cartItems.filter((x) => x.product !== action.payload)
+            };
+
+        case CART_SAVE_SHIPPING_ADDRESS:
+            return {
+                ...state,
+                shippingAddress: action.payload
             };
 
         default:

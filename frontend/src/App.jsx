@@ -8,6 +8,7 @@ import LoginScreen from './screens/LoginScreen';
 import ProductScreen from './screens/ProductScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import RegisterScreen from './screens/RegisterScreen';
+import ShippingScreen from './screens/ShippingScreen';
 
 function App() {
     /*  Wrap with <Router> cause we want to implement Client side routing
@@ -23,6 +24,7 @@ function App() {
                     <Route exact path="/login" component={LoginScreen} />
                     <Route exact path="/register" component={RegisterScreen} />
                     <Route exact path="/profile" component={ProfileScreen} />
+                    <Route exact path="/shipping" component={ShippingScreen} />
                     <Route exact path="/product/:id" component={ProductScreen} />
                     <Route exact path="/cart/:id?" component={CartScreen} />
                 </Container>
