@@ -1,8 +1,8 @@
 {
-  "editor.fontFamily": "Victor Mono,monospace",
-  "editor.fontLigatures": true,
-  "editor.cursorBlinking": "expand",
-  "python.linting.flake8Enabled": true,
-  "python.linting.enabled": true,
-  "workbench.colorTheme": "Learn with Sumit - Shades of Grey",
+    "editor.fontFamily": "Victor Mono,monospace",
+    "editor.fontLigatures": true,
+    "editor.cursorBlinking": "expand",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    // "workbench.colorTheme": "Learn with Sumit - Professional"
 }
