@@ -5,6 +5,7 @@ import Header from './components/Header';
 import CartScreen from './screens/CartScreen';
 import HomeScreen from './screens/HomeScreen';
 import LoginScreen from './screens/LoginScreen';
+import OrderScreen from './screens/OrderScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import ProductScreen from './screens/ProductScreen';
@@ -29,6 +30,7 @@ function App() {
                     <Route exact path="/shipping" component={ShippingScreen} />
                     <Route exact path="/payment" component={PaymentScreen} />
                     <Route exact path="/placeorder" component={PlaceOrderScreen} />
+                    <Route exact path="/order/:id" component={OrderScreen} />
                     <Route exact path="/product/:id" component={ProductScreen} />
                     <Route exact path="/cart/:id?" component={CartScreen} />
                 </Container>
