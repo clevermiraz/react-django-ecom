@@ -5,6 +5,7 @@ from rest_framework import status
 
 from api.models import Product, Order, OrderItem, ShippingAddress
 from api.serializer import OrderSerializer
+from datetime import datetime
 
 
 @api_view(['POST'])
@@ -68,3 +69,14 @@ def getOrderId(request, pk):
             return Response({'detail': 'Not Authorize to see the order view'}, status=status.HTTP_400_BAD_REQUEST)
     except Exception:
         return Response({'detail': 'Order Does Not Exits'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+def updateOrderToPaid(request, pk):
+    order = Order.objects.get(id=pk)
+
+    order.isPaid = True
+    order.paidAt = datetime.now()
+    order.save()
+
+    return Response('Order Was paid')
