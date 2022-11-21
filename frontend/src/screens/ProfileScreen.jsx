@@ -32,7 +32,7 @@ function ProfileScreen({ history }) {
     useEffect(() => {
         if (!userInfo) {
             history.push('/login');
-        } else if (!user || !user.name || success) {
+        } else if (!user || !user.name || success || userInfo.id !== user.id) {
             dispatch({
                 type: USER_UPDATE_PROFILE_RESET
             });

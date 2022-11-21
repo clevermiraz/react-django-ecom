@@ -63,7 +63,7 @@ export default function UserListScreen({ history }) {
                                 <td>{user.isAdmin ? <p>Y</p> : <p>N</p>}</td>
 
                                 <td>
-                                    <LinkContainer to={`/admin/user/${user.id}`}>
+                                    <LinkContainer to={`/admin/user/${user.id}/edit`}>
                                         <Button variant="light" className="btn-sm">
                                             Edit
                                         </Button>
