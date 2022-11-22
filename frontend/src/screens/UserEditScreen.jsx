@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getUserDetails } from '../actions/userActions';
+import { getUserDetails, updateUser } from '../actions/userActions';
 import FormContainer from '../components/FormContainer';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
+import { USER_UPDATE_RESET } from '../constants/userConstants';
 
 function UserEditScreen({ match, history }) {
     const userId = match.params.id;
@@ -20,18 +21,25 @@ function UserEditScreen({ match, history }) {
     const userDetails = useSelector((state) => state.userDetails);
     const { error, loading, user } = userDetails;
 
+    const userUpdate = useSelector((state) => state.userUpdate);
+    const { error: errorUpdate, loading: loadingUpdate, success: successUpdate } = userUpdate;
+
     useEffect(() => {
-        if (!user.name || user.id !== Number(userId)) {
+        if (successUpdate) {
+            dispatch({ type: USER_UPDATE_RESET });
+            history.push('/admin/userlist');
+        } else if (!user.name || user.id !== Number(userId)) {
             dispatch(getUserDetails(userId));
         } else {
             setName(user.name);
             setEmail(user.email);
             setIsAdmin(user.isAdmin);
         }
-    }, [dispatch, user, userId]);
+    }, [dispatch, history, successUpdate, user, userId]);
 
     const submitHandler = (e) => {
         e.preventDefault();
+        dispatch(updateUser({ id: user.id, name, email, isAdmin }));
     };
 
     return (
@@ -39,6 +47,9 @@ function UserEditScreen({ match, history }) {
             <Link to="/admin/userlist">Go Back</Link>
             <FormContainer>
                 <h1>Edit User</h1>
+                {loadingUpdate && <Loader />}
+                {errorUpdate && <Message variant="danger">{errorUpdate}</Message>}
+
                 {loading ? (
                     <Loader />
                 ) : error ? (
