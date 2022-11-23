@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 ## Installation
 
@@ -62,3 +63,10 @@ Or
 
 Recommend using Yarn🤞
        
+=======
+# react-django-ecom
+this is a fully functional ecommerce webapp
+
+
+check on Other brunch
+>>>>>>> a660c981ba3b30bbd7857c332aef256681538955
