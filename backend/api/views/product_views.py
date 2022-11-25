@@ -63,3 +63,16 @@ def deleteProduct(request, pk):
     product = Product.objects.get(id=pk)
     product.delete()
     return Response('Product Delete Successfully')
+
+
+@api_view(['POST'])
+# @permission_classes([IsAdminUser])
+def uploadImage(request):
+    data = request.data
+
+    product_id = data['product_id']
+    product = Product.objects.get(id=product_id)
+
+    product.image = request.FILES.get('image')
+    product.save()
+    return Response('image uploaded successfully')
