@@ -28,6 +28,7 @@ class Review(models.Model):
     name = models.CharField(max_length=200, null=True, blank=True)
     rating = models.IntegerField(null=True, blank=True, default=0)
     comment = models.TextField(null=True, blank=True)
+    createAt = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
         return str(self.rating)
